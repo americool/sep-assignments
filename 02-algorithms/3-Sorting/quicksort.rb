@@ -1,33 +1,27 @@
-def quicksort(array, p, r)
-  if p < r
-    q = partion(array, p, r)
-    quicksort(array, p, q-1)
-    quicksort(array, q+1, r)
-  end
-end
-
-def partion(array, p, r)
-  q = p
-  j = q
-  while j < r
-    if array[j] <= array[r]
-      swap(array, j, q)
-      q+=1
+def quicksort(array)
+  return array if array.length < 2
+  pivot = array.length - 1
+  big_array = []
+  small_array = []
+  final_array = []
+  for x in 0...pivot
+    if array[x] >= array[pivot]
+      big_array << array[x]
+    else
+      small_array << array[x]
     end
-    j+=1
   end
-  swap(array, r, q)
-  return q
+  if small_array.length > 0
+    final_array.concat(quicksort(small_array))
+  end
+    final_array << array[pivot]
+  if big_array.length > 0
+    final_array.concat(quicksort(big_array))
+  end
+  final_array
 end
 
-def swap(array, firstIndex, secondIndex)
-  temp = array[firstIndex]
-  array[firstIndex] = array[secondIndex]
-  array[secondIndex] = temp
-end
 
-test_array = [9, 7, 5, 11, 12, 2, 14, 3, 10, 6]
-
-swapped_array = quicksort(test_array, 0, (test_array.length - 1))
-
-puts swapped_array
+# test_array = [9, 7, 5, 11, 12, 2, 14, 3, 10, 6]
+# sorted_array = quicksort(test_array)
+# puts sorted_array

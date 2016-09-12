@@ -6,27 +6,25 @@ def heapsort(array)
   new_array = []
   array.each do |x|
     heap.insert(x)
+    heap.print()
+    puts "-----"
+  end
+  heap.check_values([heap.root])
+  # heap.print()
+  # puts "-----"
+  until new_array.length == array.length
+    new_array << heap.root.data
+    heap.delete(heap.root.data)
+    # heap.print()
+    # puts "-------"
   end
 
-  until new_array.length == array.length
-    last_parent = heap.find_parent_of_last(@root)
-    if !last_parent.right.nil?
-      temp = heap.head
-      heap.head = last_parent.right
-      last_parent.right = nil
-    else
-      temp = heap.head
-      heap.head = last_parent.left
-      last_parent.left = nil
-    end
-    new_array << temp.data
-    heap.check_values
-  end
+  new_array
 end
 
 
 # inserts data into max heap
-# swaps head (largest) into last value
+# swaps root (largest) into last value
 # removes last value and inserts it into new array
 # resorts heap
 
