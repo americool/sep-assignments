@@ -33,7 +33,7 @@ def bucketsort(array)
   new_array
 end
 
-t_array = [9, 7, 5, 11, 12, 2, 14, 3, 10, 6]
-sort = bucketsort(t_array)
-
-puts sort
+# t_array = [9, 7, 5, 11, 12, 2, 14, 3, 10, 6]
+# sort = bucketsort(t_array)
+#
+# puts sort

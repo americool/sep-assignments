@@ -6,8 +6,8 @@ def heapsort(array)
   new_array = []
   array.each do |x|
     heap.insert(x)
-    heap.print()
-    puts "-----"
+    # heap.print()
+    # puts "-----"
   end
   heap.check_values([heap.root])
   # heap.print()
@@ -23,13 +23,9 @@ def heapsort(array)
 end
 
 
-# inserts data into max heap
-# swaps root (largest) into last value
-# removes last value and inserts it into new array
-# resorts heap
 
-test_array = [3,2,4,7,6,5,8,9,10,1]
-
-answer = heapsort(test_array)
-
-puts answer
+# test_array = [3,2,4,7,6,5,8,9,10,1]
+#
+# answer = heapsort(test_array)
+#
+# puts answer
