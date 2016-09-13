@@ -25,4 +25,4 @@ Benchmark.bm(25) do |x|
 end
 
 
-# Looking at the attached files (I added the silly barchart as well) it's clear (and unsurprising that the heapsort is by far the slowest (as we noted before, my heap check value method is rather inefficent.) The bucket sort is almost twice as slow as the quicksort, but that's not suprising, since it's stil using the quicksort to sort the values within the buckets. 
+# Looking at the attached files (I added the silly barchart as well) it's clear (and unsurprising that the heapsort is by far the slowest (as we noted before, my heap check value method is rather inefficent.) The bucket sort is almost twice as slow as the quicksort, but that's not suprising, since it's stil using the quicksort to sort the values within the buckets.
