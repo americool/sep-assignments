@@ -3,5 +3,5 @@
 3. SELECT * FROM post ORDER BY post_id DESC | post = post.all.sort(post_id, DESC)
 4. SELECT * FROM post LIMIT 5 | post = post.all.limit(5) 
 5. SELECT comment FROM post GROUP BY user_id | user_comments = post.all.comments.sort(user_id)
-6.SELECT SUM(comment) FROM post | post = post.comments.sum
-7. SELECT post1, post2 FROM post1 LEFT JOIN post2 | joined_post = post1.left_join(post2)
+6. SELECT SUM(comment) FROM post | post = post.comments.sum7
+7. SELECT * FROM post LEFT JOIN comment ON comment.post_id = post.id | joined_post = post.all.left_join(comment, {comment.post_id == post_id})
